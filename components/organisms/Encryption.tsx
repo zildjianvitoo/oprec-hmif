@@ -13,12 +13,7 @@ const Encryption = () => {
           variants={slideInFromTop}
           className="text-[40px] font-medium text-center text-gray-200"
         >
-          Performance
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            {" "}
-            &{" "}
-          </span>
-          Security
+          PENGUMUMAN
         </motion.div>
       </div>
 

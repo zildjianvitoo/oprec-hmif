@@ -24,7 +24,7 @@ const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
-            Fullstack Developer Portfolio
+            Open Recruitment HMIF UNSRI 2024
           </h1>
         </motion.div>
 
@@ -33,28 +33,38 @@ const HeroContent = () => {
           className="mt-6 text-3xl md:text-4xl lg:text-6xl font-bold text-white max-w-[600px] "
         >
           <span>
-            Providing
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            HMIF
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-violet-700">
               {" "}
-              the best{" "}
+              OPEN{" "}
             </span>
-            project exprience
+            RECRUITMENT
           </span>
         </motion.div>
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className=" lg:text-lg text-gray-400 my-5 max-w-[600px]"
+          className=" text-lg text-gray-400 my-4 max-w-[600px]"
         >
-          I&apos;m a Full Stack Software Engineer with experience in Website,
-          Mobile, and Software development. Check out my projects and skills.
+          Himpunan Mahasiswa Teknik Informatika alias HMIF adalah sebuah
+          Organisasi Kemahasiswaan khusus Jurusan Teknik Informatika yang
+          bergerak dalam bidang Akademik maupun Non-Akademik yang dapat menjadi
+          wadah bagi para Mahasiswa Jurusan Teknik Informatika
         </motion.p>
-        <motion.a
-          variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
-        >
-          Learn More!
-        </motion.a>
+        <div className="flex gap-4">
+          <motion.a
+            variants={slideInFromLeft(1)}
+            className="py-2 px-4 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          >
+            Daftar Sekarang!
+          </motion.a>
+          <motion.a
+            variants={slideInFromLeft(1)}
+            className="py-2 px-4 button-primary-dinas text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          >
+            Lihat Dinas
+          </motion.a>
+        </div>
       </div>
 
       <motion.div
