@@ -7,8 +7,8 @@ const Projects = () => {
       className="flex flex-col items-center justify-center py-20 md:px-10"
       id="projects"
     >
-      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-700 py-20">
-        My Projects
+      <h1 className="text-[40px] lg:text-[50px]  font-semibold text-center bg-clip-text bg-gradient-to-r text-transparent from-indigo-300 to-violet-700 py-10">
+        Proker
       </h1>
       <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
         <ProjectCard

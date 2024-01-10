@@ -40,7 +40,9 @@ const Navbar = () => {
 
         <div className="flex-row gap-5 hidden lg:flex">
           {Socials.map((social) => (
-            <social.src key={social.name} className="text-white text-3xl" />
+            <a key={social.name} href={social.href}>
+              <social.src className="text-gray-300 text-3xl" />
+            </a>
           ))}
         </div>
       </div>

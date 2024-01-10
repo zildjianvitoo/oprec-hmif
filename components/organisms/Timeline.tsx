@@ -27,10 +27,10 @@ const Timeline = () => {
         <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
           <ChecklistTimeline />
           <TimelineCard
-            date={"20/01/2024"}
+            date={"19/01/2024"}
             title={"Pembukaan Pendaftaran"}
             description={
-              "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus"
+              "Pendaftaran dibuka pada tanggal sampai 19 - 26 Januari 2024 pukul 23:59 WIB"
             }
           />
         </div>
@@ -38,10 +38,10 @@ const Timeline = () => {
         <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
           <ChecklistTimeline />
           <TimelineCard
-            date={"20/01/2024"}
-            title={"Pembukaan Pendaftaran"}
+            date={"27/01/2024"}
+            title={"Wawancara"}
             description={
-              "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus"
+              "Sesi wawancara dilakukan semi-offline dan terdiri dari 2 tahap, yaitu wawancara inti dan wawancara dinas"
             }
           />
         </div>
@@ -49,10 +49,10 @@ const Timeline = () => {
         <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
           <ChecklistTimeline />
           <TimelineCard
-            date={"20/01/2024"}
-            title={"Pembukaan Pendaftaran"}
+            date={"28/01/2024"}
+            title={"LGD"}
             description={
-              "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus"
+              "Leaderless Group Discussion dilakukan secara daring melalui media aplikasi Zoom"
             }
           />
         </div>
@@ -60,21 +60,10 @@ const Timeline = () => {
         <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
           <ChecklistTimeline />
           <TimelineCard
-            date={"20/01/2024"}
-            title={"Pembukaan Pendaftaran"}
+            date={"02/02/2024"}
+            title={"Pengumuman"}
             description={
-              "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus"
-            }
-          />
-        </div>
-        {/* Item #5 */}
-        <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-          <ChecklistTimeline />
-          <TimelineCard
-            date={"20/01/2024"}
-            title={"Pembukaan Pendaftaran"}
-            description={
-              "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus"
+              "Pengumuman disampaikan melalui grup whatsapp global oprec, dan akan dikirim ke email masing masing"
             }
           />
         </div>

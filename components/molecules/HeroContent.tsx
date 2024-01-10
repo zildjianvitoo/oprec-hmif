@@ -51,7 +51,7 @@ const HeroContent = () => {
           bergerak dalam bidang Akademik maupun Non-Akademik yang dapat menjadi
           wadah bagi para Mahasiswa Jurusan Teknik Informatika
         </motion.p>
-        <div className="flex gap-4">
+        <div className="flex gap-4 text-lg">
           <motion.a
             variants={slideInFromLeft(1)}
             className="py-2 px-4 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"

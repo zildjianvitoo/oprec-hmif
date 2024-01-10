@@ -85,14 +85,13 @@ export const Socials = [
   {
     name: "Instagram",
     src: AiFillInstagram,
+    href: "https://www.instagram.com/hmif.unsri",
   },
-  {
-    name: "Line",
-    src: FaLine,
-  },
+
   {
     name: "Youtube",
     src: FaYoutube,
+    href: "https://youtube.com/@hmiffasilkomunsri6922",
   },
 ];
 
