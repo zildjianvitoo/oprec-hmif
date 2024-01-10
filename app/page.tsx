@@ -1,7 +1,7 @@
-import Encryption from "@/components/organisms/Encryption";
+import Encryption from "@/components/organisms/Pengumuman";
 import Hero from "@/components/organisms/Hero";
 import Projects from "@/components/organisms/Projects";
-import Skills from "@/components/organisms/Skills";
+import Timeline from "@/components/organisms/Timeline";
 import Image from "next/image";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
     <main className="h-full w-full">
       <div className="flex flex-col gap-20">
         <Hero />
-        {/* <Skills /> */}
+        <Timeline />
         <Encryption />
         <Projects />
       </div>

@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
 import Image from "next/image";
 
-const Encryption = () => {
+const Pengumuman = () => {
   return (
     <div className="flex flex-row relative items-center justify-center min-h-screen w-full ">
       <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
           variants={slideInFromTop}
-          className="text-[40px] font-medium text-center text-gray-200"
+          className="text-[40px] lg:text-[50px]  font-semibold text-center bg-clip-text bg-gradient-to-r text-transparent from-indigo-300 to-violet-700 "
         >
-          PENGUMUMAN
+          Pengumuman
         </motion.div>
       </div>
 
@@ -41,7 +41,7 @@ const Encryption = () => {
       </div>
       <div className="absolute z-[20] bottom-[10px] px-[5px]">
         <div className="cursive text-[20px] font-medium text-center text-gray-300">
-          Secure your data with end-to-end encryption
+          Mari bergabung bersama kami
         </div>
       </div>
 
@@ -60,4 +60,4 @@ const Encryption = () => {
   );
 };
 
-export default Encryption;
+export default Pengumuman;
