@@ -1,0 +1,61 @@
+export const faq = [
+  {
+    question: "Siapa saja yang boleh mendaftar menjadi staff HMIF 2024?",
+    answer:
+      "Seluruh Mahasiswa aktif Teknik Informatika UNSRI angkatan 2022 dan 2023.",
+  },
+  {
+    question: "Bagaimana cara mendaftar untuk bergabung dengan HMIF?",
+    answer:
+      "Dapat dilakukan dengan membuka link pendaftaran Daftar sekarang kemudian memilih menu registrasi dan mengisi identitas dan data yang diperlukan pada formulir yang disediakan. Setelah mengisi identitas dan data, dapat melakukan submit untuk mengirim formulir yang telah di isi.",
+  },
+  {
+    question:
+      "Apakah boleh mendaftar dengan bidang yang sama di opsi 1 dan opsi 2?",
+    answer:
+      "Boleh, akan tetapi lebih disarankan untuk memilih bidang yang berbeda agar masih ada pilihan opsi kedua jika dibidang pertama tidak memenuhi syarat.",
+  },
+  {
+    question:
+      "Apakah dinas yang kita pilih di formulir akan mutlak ditempatkan disana?",
+    answer:
+      "Kemungkinan besar iya, tapi tidak menutup kemungkinan akan dipindahkan ke posisi lain. Semua tergantung dari hasil dan proses pada saat wawancara dan FGD.",
+  },
+  {
+    question:
+      "Kalau tidak mengikuti salah satu tahapan, apakah dinyatakan tidak lulus?",
+    answer:
+      "Tergantung dari kesepakatan dan ketegasan dari kepala dinas dan inti HMIF (akan dimusyawarahkan lagi oleh para BPH).",
+  },
+  {
+    question:
+      "Apabila ada berkas atau informasi yang salah apakah boleh submit ulang?",
+    answer:
+      "Dapat menghubungi contact person dan memberikan nim atau email yang terdaftar serta memberi tahu hal apa yang ingin di ubah karena tidak bisa dilakukan submit ulang.",
+  },
+  {
+    question: "Apakah ada kuota tertentu untuk Open Recruitment ini?",
+    answer:
+      "Sejauh ini, HMIF masih membuka secara terbuka tanpa batasan kuota.",
+  },
+  {
+    question:
+      "Saya sudah memiliki organisasi di internal dan eksternal kampus, apakah saya masih boleh ikut HMIF?",
+    answer: "Diperbolehkan, kecuali DPM (tidak disarankan).",
+  },
+  {
+    question:
+      "Apakah calon pendaftar HMIF harus memiliki pengalaman organisasi sebelumnya?",
+    answer:
+      "Untuk mendaftar HMIF tidak harus memiliki pengalaman berorganisasi, karena semua yang menjadi bagian HMIF akan berproses dan belajar bersama di HMIF.",
+  },
+  {
+    question: "Terdapat dinas apa saja dalam organisasi HMIF?",
+    answer:
+      "Dalam HMIF terdapat 7 dinas yaitu Administrasi, Akademik, Kajian Strategi dan Advokasi, Kewirausahaan, Komunikasi dan Informasi, Pengembangan Minat dan Bakat, dan Pengembangan Sumber Daya Manusia. Untuk informasi selengkapnya mengenai masing-masing dinas dapat dilihat pada akun instagram HMIF @hmif.unsri dan juga pada saat mengikuti sosialisasi HMIF.",
+  },
+  {
+    question: "Apakah bisa mendaftar HMIF dan BEM secara bersamaan?",
+    answer: "Apakah bisa mendaftar HMIF dan BEM secara bersamaan?",
+  },
+];

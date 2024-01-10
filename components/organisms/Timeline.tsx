@@ -13,7 +13,7 @@ import TimelineCard from "../atoms/TimelineCard";
 
 const Timeline = () => {
   return (
-    <div>
+    <section>
       <h1 className="text-[40px] lg:text-[50px] font-semibold text-center bg-clip-text bg-gradient-to-r text-transparent from-indigo-300 to-violet-700 py-10">
         Timeline
       </h1>
@@ -79,7 +79,7 @@ const Timeline = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
