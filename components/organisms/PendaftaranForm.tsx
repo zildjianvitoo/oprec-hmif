@@ -23,6 +23,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
 import { Checkbox } from "../ui/checkbox";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 const MAX_FILE_SIZE = 4000000;
 const ACCEPTED_IMAGE_TYPES = [
@@ -103,9 +105,51 @@ export default function PendaftaranForm() {
     },
   });
 
-  function onSubmit(formValues: z.infer<typeof FormSchema>) {
-    console.log(formValues);
-  }
+  const onSubmit = async (formValues: z.infer<typeof FormSchema>) => {
+    const collectionRef = collection(db, "calonStaff");
+
+    const {
+      address,
+      campusDomicile,
+      class: classStudent,
+      division1,
+      division2,
+      email,
+      generation,
+      idLine,
+      isAgree,
+      name,
+      nim,
+      reasonDivision1,
+      reasonDivision2,
+      reasonHMIF,
+      whatsappNumber,
+    } = formValues;
+    console.log(campusDomicile);
+    try {
+      const docRef = await addDoc(collectionRef, {
+        address,
+        campusDomicile,
+        classStudent,
+        division1,
+        division2,
+        email,
+        generation,
+        idLine,
+        isAgree,
+        name,
+        nim,
+        reasonDivision1,
+        reasonDivision2,
+        reasonHMIF,
+        whatsappNumber,
+      });
+      console.log(docRef);
+      console.log("berhasil");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="flex flex-col ">
@@ -215,7 +259,7 @@ export default function PendaftaranForm() {
 
             <FormField
               control={form.control}
-              name="generation"
+              name="campusDomicile"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Domisili Kampus</FormLabel>
@@ -502,7 +546,12 @@ export default function PendaftaranForm() {
                 </FormItem>
               )}
             />
-            <Button type="submit">Submit</Button>
+            <Button
+              type="submit"
+              className="w-full mt-2 text-lg uppercase md:w-1/2 lg:w-1/4 button-submit"
+            >
+              Kirim
+            </Button>
           </form>
         </Form>
       </div>

@@ -17,7 +17,7 @@ const HeroContent = () => {
       animate="visible"
       className="flex gap-y-8 flex-col lg:flex-row items-center justify-center px-6 sm:px-10 lg:px-20 mt-32 lg:mt-40 w-full z-[20]"
     >
-      <div className="h-full w-full flex flex-col gap-3 lg:gap-5 justify-center m-auto text-start">
+      <div className="flex flex-col justify-center w-full h-full gap-3 m-auto lg:gap-5 text-start">
         <motion.div
           variants={slideInFromTop}
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
@@ -46,10 +46,10 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className=" text-lg text-gray-400 my-4 max-w-[600px]"
         >
-          Himpunan Mahasiswa Teknik Informatika alias HMIF adalah sebuah
-          Organisasi Kemahasiswaan khusus Jurusan Teknik Informatika yang
-          bergerak dalam bidang Akademik maupun Non-Akademik yang dapat menjadi
-          wadah bagi para Mahasiswa Jurusan Teknik Informatika
+          Himpunan Mahasiswa Informatika alias HMIF adalah sebuah Organisasi
+          Kemahasiswaan khusus Jurusan Teknik Informatika yang bergerak dalam
+          bidang Akademik maupun Non-Akademik yang dapat menjadi wadah bagi para
+          Mahasiswa Jurusan Teknik Informatika
         </motion.p>
         <div className="flex gap-4 text-lg">
           <motion.a
@@ -69,7 +69,7 @@ const HeroContent = () => {
 
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
+        className="flex items-center justify-center w-full h-full"
       >
         <Image
           src="/mainIconsdark.svg"
