@@ -3,7 +3,7 @@ import HeroContent from "../molecules/HeroContent";
 
 const Hero = () => {
   return (
-    <div className="relative flex flex-col h-full w-full" id="about-me">
+    <div className="relative flex flex-col w-full h-full" id="about-me">
       <video
         autoPlay
         muted

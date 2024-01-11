@@ -76,6 +76,14 @@
   }
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+
 .cursive {
   font-family: "Cedarville Cursive", cursive;
 }
@@ -128,7 +136,8 @@
 }
 
 .button-primary-dinas,
-.timeline-card {
+.timeline-card,
+.form-pendaftaran-box {
   background: linear-gradient(
       180deg,
       rgba(60, 8, 126, 0) 0%,
