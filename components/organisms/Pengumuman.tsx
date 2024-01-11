@@ -7,7 +7,10 @@ import Image from "next/image";
 
 const Pengumuman = () => {
   return (
-    <section className="flex flex-row relative items-center justify-center min-h-[70vh] lg:min-h-screen w-full ">
+    <section
+      id="pengumuman"
+      className="flex flex-row relative items-center justify-center min-h-[70vh] lg:min-h-screen w-full "
+    >
       <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
           variants={slideInFromTop}
@@ -18,7 +21,7 @@ const Pengumuman = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center translate-y-[-50px] absolute z-[20] w-auto h-auto">
-        <div className="flex flex-col items-center group cursor-pointer w-auto h-auto">
+        <div className="flex flex-col items-center w-auto h-auto cursor-pointer group">
           <Image
             src="/LockTop.png"
             alt="Lock top"
@@ -31,7 +34,7 @@ const Pengumuman = () => {
             alt="Lock Main"
             width={70}
             height={70}
-            className=" z-10"
+            className="z-10 "
           />
         </div>
 
@@ -45,7 +48,7 @@ const Pengumuman = () => {
         </div>
       </div>
 
-      <div className="w-full flex items-start justify-center absolute">
+      <div className="absolute flex items-start justify-center w-full">
         <video
           loop
           muted

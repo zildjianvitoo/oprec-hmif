@@ -69,11 +69,15 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border scroll-smooth;
   }
   body {
     @apply bg-background text-foreground;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 input:-webkit-autofill,
@@ -164,8 +168,4 @@ input[data-autocompleted] {
 }
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
-}
-
-html {
-  scroll-behavior: smooth;
 }

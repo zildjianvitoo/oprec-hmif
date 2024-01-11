@@ -32,7 +32,7 @@ const Navbar = () => {
             <Link href="/daftar" className="cursor-pointer">
               Daftar
             </Link>
-            <Link href="/" className="cursor-pointer">
+            <Link href="/#pengumuman" className="cursor-pointer">
               Pengumuman
             </Link>
           </div>
