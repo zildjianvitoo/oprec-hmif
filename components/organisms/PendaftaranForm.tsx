@@ -6,7 +6,6 @@ import * as z from "zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -25,7 +24,7 @@ import { Textarea } from "../ui/textarea";
 import { Checkbox } from "../ui/checkbox";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-
+import { useRouter } from "next/navigation";
 const MAX_FILE_SIZE = 4000000;
 const ACCEPTED_IMAGE_TYPES = [
   "image/jpeg",
@@ -105,6 +104,8 @@ export default function PendaftaranForm() {
     },
   });
 
+  const router = useRouter();
+
   const onSubmit = async (formValues: z.infer<typeof FormSchema>) => {
     const collectionRef = collection(db, "calonStaff");
 
@@ -144,8 +145,7 @@ export default function PendaftaranForm() {
         reasonHMIF,
         whatsappNumber,
       });
-      console.log(docRef);
-      console.log("berhasil");
+      router.push("/daftar/sukses");
     } catch (error) {
       console.log(error);
     }
