@@ -15,10 +15,14 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { useToast } from "@/components/ui/use-toast";
+import { FirebaseError } from "firebase/app";
 
 const FormSchema = z.object({
   email: z
@@ -36,7 +40,17 @@ export default function BPHLogin() {
     },
   });
 
+  const { toast } = useToast();
+
   const router = useRouter();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        router.push("/dashboard");
+      }
+    });
+  }, []);
 
   const onSubmit = async (formValues: z.infer<typeof FormSchema>) => {
     const { email, password } = formValues;
@@ -49,7 +63,9 @@ export default function BPHLogin() {
       router.push("/dashboard");
       console.log(userCredentials);
     } catch (error) {
-      console.log(error);
+      if (error instanceof FirebaseError) {
+        toast({ description: error?.code, variant: "destructive" });
+      }
     }
   };
 

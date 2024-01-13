@@ -141,7 +141,9 @@ input[data-autocompleted] {
 
 .button-primary-dinas,
 .timeline-card,
-.form-pendaftaran-box {
+.form-pendaftaran-box,
+.dinas-box,
+.sidebar-dashboard-item:hover {
   background: linear-gradient(
       180deg,
       rgba(60, 8, 126, 0) 0%,

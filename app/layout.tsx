@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Outfit, Poppins } from "next/font/google";
 import "./globals.css";
 import StarsCanvas from "@/components/organisms/StarBackground";
-import Navbar from "@/components/organisms/Navbar";
-import Footer from "@/components/organisms/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 const outfit = Outfit({ subsets: ["latin"] });
@@ -27,8 +26,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${outfit.className} bg-[#030014] overflow-x-hidden`}>
         <StarsCanvas />
-        <Navbar />
         {children}
+        <Toaster />
       </body>
     </html>
   );

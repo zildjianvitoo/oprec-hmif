@@ -5,10 +5,12 @@ import Timeline from "@/components/organisms/Timeline";
 import Image from "next/image";
 import Faq from "@/components/organisms/Faq";
 import Footer from "@/components/organisms/Footer";
+import Navbar from "@/components/organisms/Navbar";
 
 export default function Home() {
   return (
     <>
+      <Navbar />
       <main className="w-full h-full">
         <div className="flex flex-col gap-20">
           <Hero />
