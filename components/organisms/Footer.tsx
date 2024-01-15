@@ -11,7 +11,7 @@ import { FaYoutube, FaLinkedin, FaLink } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] ">
+    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] relative bottom-0 left-0">
       <div className="flex flex-col items-center justify-center w-full m-auto">
         <div className="w-full h-full flex flex-row items-center justify-around flex-wrap z-[20]">
           <div className="min-w-[200px] h-auto flex flex-col items-center justify-start ">

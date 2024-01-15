@@ -10,7 +10,7 @@ const Projects = () => {
       <h1 className="text-[40px] lg:text-[50px]  font-semibold text-center bg-clip-text bg-gradient-to-r text-transparent from-indigo-300 to-violet-700 py-10">
         Proker
       </h1>
-      <div className="grid flex-col w-full h-full gap-10 px-10 md:grid-cols-2 lg:grid-cols-3 ">
+      <div className="grid flex-col w-full h-full gap-10 px-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
         <ProjectCard
           src="/srifoton.jpg"
           title="SRIFOTON"
