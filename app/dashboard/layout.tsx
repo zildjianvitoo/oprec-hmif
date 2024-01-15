@@ -12,7 +12,7 @@ export default function RootDashboard({
 }) {
   return (
     <>
-      <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-3 lg:px-10 xl:px-14">
+      <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-[60] px-3 lg:px-10 xl:px-14">
         <div className="w-full h-full flex flex-row items-center justify-between m-auto lg:px-[10px]">
           <Link
             href="/dashboard"
@@ -35,19 +35,28 @@ export default function RootDashboard({
 
       <div className="flex">
         <MobileSidebar />
-        <aside className=" pt-20 hidden md:flex flex-col bg-[#03001417] backdrop-blur-md shadow-2xl shadow-[#2A0E61]/50 h-full w-56 fixed z-20 px-5   mx-auto">
-          <div className="flex items-center sidebar-dashboard-item rounded-md px-3 py-2   justify-start gap-2 text-xl text-slate-200 mt-5 cursor-pointer">
+        <aside className=" pt-20 hidden md:flex flex-col bg-[#03001417] backdrop-blur-md shadow-2xl shadow-[#2A0E61]/50 h-full w-56 fixed z-[50] px-5   mx-auto">
+          <Link
+            href={"/dashboard"}
+            className="flex items-center sidebar-dashboard-item rounded-md px-3 py-2   justify-start gap-2 text-xl text-slate-200 mt-5 cursor-pointer"
+          >
             <MdDashboard />
             <p className=""> Dashboard</p>
-          </div>
-          <div className="flex items-center justify-start sidebar-dashboard-item rounded-md px-3 py-2  gap-2 text-xl text-slate-200 mt-5 cursor-pointer">
+          </Link>
+          <Link
+            href={"/dashboard/pendaftar"}
+            className="flex items-center justify-start sidebar-dashboard-item rounded-md px-3 py-2  gap-2 text-xl text-slate-200 mt-5 cursor-pointer"
+          >
             <FaUsers />
             <p className=""> Pendaftar</p>
-          </div>
-          <div className="flex items-center  justify-start sidebar-dashboard-item rounded-md px-3 py-2 gap-2 text-xl text-slate-200 mt-5 cursor-pointer">
+          </Link>
+          <Link
+            href={"/dashboard/diterima"}
+            className="flex items-center  justify-start sidebar-dashboard-item rounded-md px-3 py-2 gap-2 text-xl text-slate-200 mt-5 cursor-pointer"
+          >
             <MdVerifiedUser />
             <p className=""> Diterima</p>
-          </div>
+          </Link>
           <hr className="h-2 text-slate-300 mt-5" />
           <LogoutButton />
         </aside>

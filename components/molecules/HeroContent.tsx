@@ -9,6 +9,8 @@ import {
 } from "@/lib/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import Link from "next/link";
+import NoSSR from "../atoms/NoSSR";
 
 const HeroContent = () => {
   return (
@@ -52,12 +54,16 @@ const HeroContent = () => {
           Mahasiswa Jurusan Teknik Informatika
         </motion.p>
         <div className="flex gap-4 text-lg">
-          <motion.a
-            variants={slideInFromLeft(1)}
-            className="py-2 px-4 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
-          >
-            Daftar Sekarang!
-          </motion.a>
+          <NoSSR>
+            <motion.a
+              href="/daftar"
+              variants={slideInFromLeft(1)}
+              className="py-2 px-4 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+            >
+              <Link href="/daftar">Daftar Sekarang!</Link>
+            </motion.a>
+          </NoSSR>
+
           <motion.a
             variants={slideInFromLeft(1)}
             className="py-2 px-4 button-primary-dinas text-center text-white cursor-pointer rounded-lg max-w-[200px]"

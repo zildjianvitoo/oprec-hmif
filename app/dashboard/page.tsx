@@ -15,7 +15,6 @@ export default function Dashboard() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser({ email: user.email ? user.email : "" });
-        console.log(user);
       } else {
         router.push("/");
       }
@@ -24,20 +23,66 @@ export default function Dashboard() {
 
   return (
     <div className="flex gap-x-6 gap-y-6 flex-wrap justify-center px-14">
-      <DinasCard title="Pendaftar" registrant={3} iconBgColor="bg-sky-500" />
-      <DinasCard title="Pendaftar" registrant={3} iconBgColor="bg-amber-500" />
-      <DinasCard title="Pendaftar" registrant={3} iconBgColor="bg-lime-500" />
       <DinasCard
+        href="/dashboard/pendaftar"
+        title="Pendaftar"
+        registrant={3}
+        iconBgColor="bg-sky-500"
+      />
+      <DinasCard
+        href="/dashboard/pendaftar-diterima"
+        title="Pendaftar Diterima"
+        registrant={3}
+        iconBgColor="bg-amber-500"
+      />
+      <DinasCard
+        href="/dashboard/pendaftar-diterima"
+        title="Pendaftar"
+        registrant={3}
+        iconBgColor="bg-lime-500"
+      />
+      <DinasCard
+        href="/dashboard/pendaftar-diterima"
         title="Pendaftar"
         registrant={3}
         iconBgColor="bg-emerald-500"
       />
-      <DinasCard title="Pendaftar" registrant={3} iconBgColor="bg-cyan-500" />
-      <DinasCard title="Pendaftar" registrant={3} iconBgColor="bg-pink-500" />
-      <DinasCard title="Pendaftar" registrant={3} iconBgColor="bg-indigo-500" />
-      <DinasCard title="Pendaftar" registrant={3} iconBgColor="bg-purple-500" />
-      <DinasCard title="Pendaftar" registrant={3} iconBgColor="bg-violet-500" />
-      <DinasCard title="Pendaftar" registrant={3} iconBgColor="bg-red-500" />
+      <DinasCard
+        href="/dashboard/pendaftar-diterima"
+        title="Pendaftar"
+        registrant={3}
+        iconBgColor="bg-cyan-500"
+      />
+      <DinasCard
+        href="/dashboard/pendaftar-diterima"
+        title="Pendaftar"
+        registrant={3}
+        iconBgColor="bg-pink-500"
+      />
+      <DinasCard
+        href="/dashboard/pendaftar-diterima"
+        title="Pendaftar"
+        registrant={3}
+        iconBgColor="bg-indigo-500"
+      />
+      <DinasCard
+        href="/dashboard/pendaftar-diterima"
+        title="Pendaftar"
+        registrant={3}
+        iconBgColor="bg-purple-500"
+      />
+      <DinasCard
+        href="/dashboard/pendaftar-diterima"
+        title="Pendaftar"
+        registrant={3}
+        iconBgColor="bg-violet-500"
+      />
+      <DinasCard
+        href="/dashboard/pendaftar-diterima"
+        title="Pendaftar"
+        registrant={3}
+        iconBgColor="bg-red-500"
+      />
     </div>
   );
 }

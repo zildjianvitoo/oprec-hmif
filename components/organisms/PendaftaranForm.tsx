@@ -25,6 +25,8 @@ import { Checkbox } from "../ui/checkbox";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
 const MAX_FILE_SIZE = 4000000;
 const ACCEPTED_IMAGE_TYPES = [
   "image/jpeg",
@@ -549,8 +551,12 @@ export default function PendaftaranForm() {
             <Button
               type="submit"
               className="w-full mt-2 text-lg uppercase md:w-1/2 lg:w-1/4 button-submit"
+              disabled={form.formState.isSubmitting}
             >
               Kirim
+              {form.formState.isSubmitting && (
+                <AiOutlineLoading3Quarters className="animate-spin" />
+              )}
             </Button>
           </form>
         </Form>
