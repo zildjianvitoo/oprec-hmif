@@ -38,29 +38,29 @@ export default function RootDashboard({
         <aside className=" pt-20 hidden md:flex flex-col bg-[#03001417] backdrop-blur-md shadow-2xl shadow-[#2A0E61]/50 h-full w-56 fixed z-[50] px-5   mx-auto">
           <Link
             href={"/dashboard"}
-            className="flex items-center sidebar-dashboard-item rounded-md px-3 py-2   justify-start gap-2 text-xl text-slate-200 mt-5 cursor-pointer"
+            className="flex items-center justify-start gap-2 px-3 py-2 mt-5 text-xl rounded-md cursor-pointer sidebar-dashboard-item text-slate-200"
           >
             <MdDashboard />
             <p className=""> Dashboard</p>
           </Link>
           <Link
             href={"/dashboard/pendaftar"}
-            className="flex items-center justify-start sidebar-dashboard-item rounded-md px-3 py-2  gap-2 text-xl text-slate-200 mt-5 cursor-pointer"
+            className="flex items-center justify-start gap-2 px-3 py-2 mt-5 text-xl rounded-md cursor-pointer sidebar-dashboard-item text-slate-200"
           >
             <FaUsers />
             <p className=""> Pendaftar</p>
           </Link>
           <Link
             href={"/dashboard/diterima"}
-            className="flex items-center  justify-start sidebar-dashboard-item rounded-md px-3 py-2 gap-2 text-xl text-slate-200 mt-5 cursor-pointer"
+            className="flex items-center justify-start gap-2 px-3 py-2 mt-5 text-xl rounded-md cursor-pointer sidebar-dashboard-item text-slate-200"
           >
             <MdVerifiedUser />
             <p className=""> Diterima</p>
           </Link>
-          <hr className="h-2 text-slate-300 mt-5" />
+          <hr className="h-2 mt-5 text-slate-300" />
           <LogoutButton />
         </aside>
-        <div className="md:pl-56 pt-24 py-16 relative z-30">{children}</div>
+        <div className="relative z-30 py-16 pt-24 md:pl-56">{children}</div>
       </div>
     </>
   );

@@ -10,5 +10,5 @@ export default function NoSSR({ children }: Props) {
     setLoading(true);
   }, [loading]);
 
-  return loading ? <>{children}</> : null;
+  return loading ? <> {children} </> : null;
 }

@@ -143,6 +143,7 @@ input[data-autocompleted] {
 .timeline-card,
 .form-pendaftaran-box,
 .dinas-box,
+.table-calon-staff,
 .sidebar-dashboard-item:hover {
   background: linear-gradient(
       180deg,

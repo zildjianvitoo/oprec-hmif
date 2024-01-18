@@ -78,10 +78,10 @@ const HeroContent = () => {
         className="flex items-center justify-center w-full h-full"
       >
         <Image
-          src="/mainIconsdark.svg"
+          src="/hero-dinas.svg"
           alt="work icons"
-          height={650}
-          width={650}
+          height={520}
+          width={520}
         />
       </motion.div>
     </motion.div>

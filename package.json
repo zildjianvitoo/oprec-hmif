@@ -32,6 +32,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@hookform/devtools": "^4.3.1",
     "@react-three/drei": "^9.88.4",
     "@react-three/fiber": "^8.15.4",
     "@types/node": "^20",

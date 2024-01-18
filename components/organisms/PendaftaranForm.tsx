@@ -1,5 +1,5 @@
 "use client";
-
+import { DevTool } from "@hookform/devtools";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -23,9 +23,11 @@ import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
 import { Checkbox } from "../ui/checkbox";
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "@/lib/firebase";
+import { db, storage } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { ref, uploadBytes } from "firebase/storage";
+import NoSSR from "../atoms/NoSSR";
 
 const MAX_FILE_SIZE = 4000000;
 const ACCEPTED_IMAGE_TYPES = [
@@ -55,8 +57,13 @@ const FormSchema = z.object({
     .regex(/^[0-9]*$/, { message: "No Whatsapp harus berupa angka" })
     .min(1, { message: "No Whatsapp tidak boleh kosong" }),
   idLine: z.string().min(1, { message: "ID Line tidak boleh kosong" }),
-  division1: z.string().min(1, { message: "Divisi 1 tidak boleh kosong" }),
-  division2: z.string().min(1, { message: "Divisi 2 tidak boleh kosong" }),
+  linkTwibbon: z
+    .string()
+    .min(1, { message: "Link Twibbon tidak boleh kosong" }),
+  divisions: z
+    .string()
+    .array()
+    .min(2, { message: "Field ini tidak boleh kosong" }),
   reasonHMIF: z
     .string()
     .min(1, { message: "Alasan Bergabung HMIF tidak boleh kosong" }),
@@ -66,16 +73,13 @@ const FormSchema = z.object({
   reasonDivision2: z
     .string()
     .min(1, { message: "Field ini tidak boleh kosong" }),
-
   kpm: z
-    .instanceof(File)
-
+    .any()
     .refine((file) => file?.size <= MAX_FILE_SIZE, `Ukuran File terlalu besar.`)
     .refine(
       (file) => ACCEPTED_IMAGE_TYPES.includes(file?.type),
       "Mohon upload file berformat .jpg, .jpeg, .png and .webp"
     ),
-
   isAgree: z.boolean(),
 });
 
@@ -86,56 +90,61 @@ export default function PendaftaranForm() {
       address: "",
       campusDomicile: "",
       class: "",
-      division1: "",
-      division2: "",
+      divisions: [],
       email: "",
       generation: "",
       idLine: "",
       isAgree: false,
+      linkTwibbon: "",
       name: "",
       nim: "",
       reasonDivision1: "",
       reasonDivision2: "",
       reasonHMIF: "",
       whatsappNumber: "",
-      kpm: new File([], ""),
+      kpm: null,
     },
   });
 
   const router = useRouter();
 
   const onSubmit = async (formValues: z.infer<typeof FormSchema>) => {
+    console.log(formValues.kpm);
     const collectionRef = collection(db, "calonStaff");
-
+    console.log("kocakk");
     const {
       address,
       campusDomicile,
       class: classStudent,
-      division1,
-      division2,
+      divisions,
       email,
       generation,
       idLine,
       isAgree,
+      linkTwibbon,
       name,
       nim,
       reasonDivision1,
       reasonDivision2,
       reasonHMIF,
       whatsappNumber,
+      kpm,
     } = formValues;
-    console.log(campusDomicile);
+    console.log(kpm);
     try {
+      const storageRef = ref(storage, `calonStaff/${nim}`);
+      const uploadedImage = await uploadBytes(storageRef, kpm);
+      console.log(uploadedImage);
       const docRef = await addDoc(collectionRef, {
         address,
         campusDomicile,
         classStudent,
-        division1,
-        division2,
+        divisions,
         email,
         generation,
         idLine,
         isAgree,
+        linkTwibbon,
         name,
         nim,
         reasonDivision1,
@@ -332,7 +341,7 @@ export default function PendaftaranForm() {
 
             <FormField
               control={form.control}
-              name="division1"
+              name="divisions.0"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Divisi 1</FormLabel>
@@ -385,7 +394,7 @@ export default function PendaftaranForm() {
 
             <FormField
               control={form.control}
-              name="division2"
+              name="divisions.1"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Divisi 2</FormLabel>
@@ -494,6 +503,24 @@ export default function PendaftaranForm() {
                 @hmif.unsri
               </p>
             </div>
+
+            <FormField
+              control={form.control}
+              name="linkTwibbon"
+              render={({ field }) => (
+                <FormItem>
+                  {/* <FormLabel></FormLabel> */}
+                  <FormControl>
+                    <Textarea
+                      placeholder="Link Feed Twibbon di Instagram"
+                      className="resize-none"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <FormField
               control={form.control}
               name="kpm"
@@ -508,11 +535,11 @@ export default function PendaftaranForm() {
                       className="h-12 cursor-pointer"
                       accept="image/png, image/jpeg, image/jpg"
                       type="file"
-                      onChange={(e) =>
+                      onChange={(e) => {
                         field.onChange(
                           e.target.files ? e.target.files[0] : null
-                        )
-                      }
+                        );
+                      }}
                     />
                   </FormControl>
                   <FormMessage />
@@ -551,10 +578,15 @@ export default function PendaftaranForm() {
             >
               Kirim
               {form.formState.isSubmitting && (
-                <AiOutlineLoading3Quarters className="animate-spin" />
+                <AiOutlineLoading3Quarters className="ml-2 animate-spin" />
               )}
             </Button>
           </form>
+          <div className="absolute z-[5000]">
+            <NoSSR>
+              <DevTool control={form.control} placement="bottom-right" />
+            </NoSSR>
+          </div>
         </Form>
       </div>
     </div>

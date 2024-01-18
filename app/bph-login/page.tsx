@@ -71,7 +71,7 @@ export default function BPHLogin() {
 
   return (
     <main className="relative z-20 flex flex-col items-center justify-center min-h-screen">
-      <div className="w-1/2 px-3 py-10 rounded-lg lg:px-6 form-pendaftaran-box">
+      <div className="w-[85%] px-3 py-10 rounded-lg lg:w-1/2 lg:px-6 form-pendaftaran-box">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}

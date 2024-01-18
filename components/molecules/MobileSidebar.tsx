@@ -11,31 +11,48 @@ import { MdDashboard, MdVerifiedUser } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import LogoutButton from "../atoms/LogoutButton";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 type Props = {};
 
 export default function MobileSidebar({}: Props) {
+  const [sheetOpen, setSheetOpen] = useState(false);
   return (
-    <Sheet>
-      <SheetTrigger asChild className=" z-20  md:hidden">
-        <RxHamburgerMenu className="text-3xl  absolute text-white ml-4 mt-[18px]  z-[50]" />
+    <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
+      <SheetTrigger asChild className="z-30 block md:hidden">
+        <RxHamburgerMenu
+          className={cn("text-3xl   text-white ml-4 mt-[18px]  z-[80]", {
+            absolute: !sheetOpen,
+          })}
+        />
       </SheetTrigger>
       <SheetContent
         side={"left"}
-        className=" flex-col bg-[#03001417] shadow-2xl shadow-[#2A0E61]/50  px-5   mx-auto"
+        className=" flex-col bg-[#03001417] shadow-2xl shadow-[#2A0E61]/50  px-5   mx-auto z-[100]"
       >
-        <div className="flex items-center sidebar-dashboard-item rounded-md px-3 py-2   justify-start gap-2 text-xl text-slate-200 mt-5 cursor-pointer">
+        <Link
+          href={"/dashboard"}
+          className="flex items-center justify-start gap-2 px-3 py-2 mt-5 text-xl rounded-md cursor-pointer sidebar-dashboard-item text-slate-200"
+        >
           <MdDashboard />
           <p className=""> Dashboard</p>
-        </div>
-        <div className="flex items-center justify-start sidebar-dashboard-item rounded-md px-3 py-2  gap-2 text-xl text-slate-200 mt-5 cursor-pointer">
+        </Link>
+        <Link
+          href={"/dashboard/pendaftar"}
+          className="flex items-center justify-start gap-2 px-3 py-2 mt-5 text-xl rounded-md cursor-pointer sidebar-dashboard-item text-slate-200"
+        >
           <FaUsers />
           <p className=""> Pendaftar</p>
-        </div>
-        <div className="flex items-center  justify-start sidebar-dashboard-item rounded-md px-3 py-2 gap-2 text-xl text-slate-200 mt-5 cursor-pointer">
+        </Link>
+        <Link
+          href={"/dashboard/pendaftar-diterima"}
+          className="flex items-center justify-start gap-2 px-3 py-2 mt-5 text-xl rounded-md cursor-pointer sidebar-dashboard-item text-slate-200"
+        >
           <MdVerifiedUser />
           <p className=""> Diterima</p>
-        </div>
-        <hr className="h-2 text-slate-300 mt-5" />
+        </Link>
+        <hr className="h-2 mt-5 text-slate-300" />
         <LogoutButton />
       </SheetContent>
     </Sheet>
