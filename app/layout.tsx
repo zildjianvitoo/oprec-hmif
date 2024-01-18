@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: "OPREC HMIF 2024",
   description:
     "Website yang dibuat untuk pendaftaran calon staff HMIF UNSRI periode 2024",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
