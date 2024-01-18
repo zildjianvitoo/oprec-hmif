@@ -8,7 +8,7 @@ export default function Sukses({}: Props) {
   return (
     <>
       <Navbar />
-      <main className="relative z-30 w-full h-full px-10 my-20">
+      <main className="relative z-30 w-full h-full lg:px-10 my-20">
         <div className="flex flex-col w-full px-6 mt-24 sm:px-10 lg:px-20 md:mt-28 lg:mt-32">
           <div className="flex flex-col ">
             <div className="px-3 py-10 rounded-lg lg:px-6 form-pendaftaran-box ">

@@ -45,22 +45,18 @@ const FormSchema = z.object({
     .string({ required_error: "Email tidak boleh kosong" })
     .email({ message: "Masukkan email yang valid" }),
   generation: z.string().min(1, "Angkatan tidak boleh kosong"),
-  class: z.string({ required_error: "Kelas tidak boleh kosong" }),
-  campusDomicile: z.string({
-    required_error: "Domisili Kampus tidak boleh kosong",
-  }),
+  class: z.string().min(1, "Kelas tidak boleh kosong"),
+  campusDomicile: z
+    .string()
+    .min(1, { message: "Domisili Kampus tidak boleh kosong" }),
   address: z.string().min(1, { message: "Alamat tidak boleh kosong" }),
   whatsappNumber: z.coerce
     .string()
     .regex(/^[0-9]*$/, { message: "No Whatsapp harus berupa angka" })
     .min(1, { message: "No Whatsapp tidak boleh kosong" }),
   idLine: z.string().min(1, { message: "ID Line tidak boleh kosong" }),
-  division1: z.string({
-    required_error: "Divisi 1 tidak boleh kosong",
-  }),
-  division2: z.string({
-    required_error: "Divisi 2 tidak boleh kosong",
-  }),
+  division1: z.string().min(1, { message: "Divisi 1 tidak boleh kosong" }),
+  division2: z.string().min(1, { message: "Divisi 2 tidak boleh kosong" }),
   reasonHMIF: z
     .string()
     .min(1, { message: "Alasan Bergabung HMIF tidak boleh kosong" }),
