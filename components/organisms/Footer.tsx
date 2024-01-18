@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  RxDiscordLogo,
-  RxGithubLogo,
-  RxInstagramLogo,
-  RxTwitterLogo,
-  RxLinkedinLogo,
-} from "react-icons/rx";
+import { RxGithubLogo, RxInstagramLogo } from "react-icons/rx";
 
-import { FaYoutube, FaLinkedin, FaLink } from "react-icons/fa";
+import { FaYoutube, FaLinkedin, FaLink, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -51,7 +45,7 @@ const Footer = () => {
               href="https://www.instagram.com/hmif.unsri"
               className="flex flex-row items-center my-[15px] cursor-pointer"
             >
-              <RxGithubLogo />
+              <RxInstagramLogo />
               <span className="text-[15px] ml-[6px]">Instagram</span>
             </a>
             <a
