@@ -175,7 +175,9 @@ export default function TableDetail() {
           </TableCell>
           <TableCell className="font-medium">:</TableCell>
           <TableCell className="font-medium">
-            <a href={calonStaff.linkTwibbon}>{calonStaff.linkTwibbon}</a>
+            <a href={calonStaff.linkTwibbon} className="text-sky-400">
+              {calonStaff.linkTwibbon}
+            </a>
           </TableCell>
         </TableRow>
         <TableRow className="font-bold text-slate-100 ">
@@ -184,7 +186,6 @@ export default function TableDetail() {
           </TableCell>
           <TableCell className="font-medium">:</TableCell>
           <TableCell className="font-medium">
-            <div className=""></div>
             <img id="myimg" className="max-w-64 max-h-64" src={kpmUrl} />
           </TableCell>
         </TableRow>
