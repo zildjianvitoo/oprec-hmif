@@ -81,8 +81,8 @@ const HeroContent = () => {
         <Image
           src="/hero-dinas.svg"
           alt="work icons"
-          height={520}
-          width={520}
+          height={600}
+          width={600}
         />
       </motion.div>
     </motion.div>
