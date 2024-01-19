@@ -17,6 +17,8 @@ export const metadata: Metadata = {
     "Website yang dibuat untuk pendaftaran calon staff HMIF UNSRI periode 2024",
   icons: {
     icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 };
 

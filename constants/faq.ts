@@ -18,7 +18,7 @@ export const faq = [
     question:
       "Apakah dinas yang kita pilih di formulir akan mutlak ditempatkan disana?",
     answer:
-      "Kemungkinan besar iya, tapi tidak menutup kemungkinan akan dipindahkan ke posisi lain. Semua tergantung dari hasil dan proses pada saat wawancara dan FGD.",
+      "Kemungkinan besar iya, tapi tidak menutup kemungkinan akan dipindahkan ke posisi lain. Semua tergantung dari hasil dan proses pada saat wawancara dan LGD.",
   },
   {
     question:
