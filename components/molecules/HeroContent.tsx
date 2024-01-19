@@ -65,10 +65,11 @@ const HeroContent = () => {
           </NoSSR>
 
           <motion.a
+            href="https://bit.ly/bgoprechmifunsri2024"
             variants={slideInFromLeft(1)}
             className="py-2 px-4 button-primary-dinas text-center text-white cursor-pointer rounded-lg max-w-[200px]"
           >
-            Lihat Dinas
+            Guidebook
           </motion.a>
         </div>
       </div>
@@ -78,7 +79,7 @@ const HeroContent = () => {
         className="flex items-center justify-center w-full h-full"
       >
         <Image
-          src="/hero-dinas.png"
+          src="/hero-dinas.svg"
           alt="work icons"
           height={520}
           width={520}

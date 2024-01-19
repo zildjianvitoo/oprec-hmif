@@ -10,10 +10,9 @@ export const faq = [
       "Dapat dilakukan dengan membuka link pendaftaran Daftar sekarang kemudian memilih menu registrasi dan mengisi identitas dan data yang diperlukan pada formulir yang disediakan. Setelah mengisi identitas dan data, dapat melakukan submit untuk mengirim formulir yang telah di isi.",
   },
   {
-    question:
-      "Apakah boleh mendaftar dengan bidang yang sama di opsi 1 dan opsi 2?",
+    question: "Apa boleh hanya mendaftar di satu dinas?",
     answer:
-      "Boleh, akan tetapi lebih disarankan untuk memilih bidang yang berbeda agar masih ada pilihan opsi kedua jika dibidang pertama tidak memenuhi syarat.",
+      "Boleh. Namun, disarankan untuk memilih dua dinas yang berbeda supaya masih ada pertimbangan jika Anda tidak memenuhi ketentuan di dinas pilihan pertama..",
   },
   {
     question:
@@ -56,6 +55,7 @@ export const faq = [
   },
   {
     question: "Apakah bisa mendaftar HMIF dan BEM secara bersamaan?",
-    answer: "Apakah bisa mendaftar HMIF dan BEM secara bersamaan?",
+    answer:
+      "Tidak diperbolehkan, silahkan pilih salah satu dari dua organisasi tersebut.",
   },
 ];
