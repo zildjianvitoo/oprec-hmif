@@ -22,12 +22,20 @@ import { Input } from "@/components/ui/input";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
 import { Checkbox } from "../ui/checkbox";
-import { addDoc, collection } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  getDoc,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import { db, storage } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { ref, uploadBytes } from "firebase/storage";
 import NoSSR from "../atoms/NoSSR";
+import { toast } from "../ui/use-toast";
 
 const MAX_FILE_SIZE = 4000000;
 const ACCEPTED_IMAGE_TYPES = [
@@ -109,9 +117,8 @@ export default function PendaftaranForm() {
   const router = useRouter();
 
   const onSubmit = async (formValues: z.infer<typeof FormSchema>) => {
-    console.log(formValues.kpm);
     const collectionRef = collection(db, "calonStaff");
-    console.log("kocakk");
+
     const {
       address,
       campusDomicile,
@@ -130,11 +137,25 @@ export default function PendaftaranForm() {
       whatsappNumber,
       kpm,
     } = formValues;
-    console.log(kpm);
+    const q = query(collectionRef, where("nim", "==", nim));
+    const querySnapshot = await getDocs(q);
+    if (querySnapshot.size > 0) {
+      toast({
+        variant: "destructive",
+        title: "NIM sudah terdaftar",
+        description:
+          "NIM kamu sudah terdaftar,kalau merasa bukan kamu yg mendaftar tolong hubungi kakak BPHnya ya",
+      });
+      form.setError("nim", {
+        type: "uniqueNim",
+        message: "NIM ini sudah terdaftar",
+      });
+      return;
+    }
     try {
       const storageRef = ref(storage, `calonStaff/${nim}`);
       const uploadedImage = await uploadBytes(storageRef, kpm);
-      console.log(uploadedImage);
+
       const docRef = await addDoc(collectionRef, {
         address,
         campusDomicile,
@@ -585,11 +606,11 @@ export default function PendaftaranForm() {
               )}
             </Button>
           </form>
-          <div className="absolute z-[5000]">
+          {/* <div className="absolute z-[5000]">
             <NoSSR>
               <DevTool control={form.control} placement="bottom-right" />
             </NoSSR>
-          </div>
+          </div> */}
         </Form>
       </div>
     </div>

@@ -25,7 +25,10 @@ export default function Sukses({}: Props) {
               <br />
               <p className="my-1 text-xl text-gray-400 ">
                 Link :{" "}
-                <a href="" className="underline text-sky-400">
+                <a
+                  href="https://linktr.ee/OPREC_HMIF2024"
+                  className="underline text-sky-400"
+                >
                   Group Whatsapp
                 </a>
               </p>
