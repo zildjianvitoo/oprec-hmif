@@ -92,7 +92,7 @@ export default function TableDetail() {
             Email
           </TableCell>
           <TableCell className="font-medium">:</TableCell>
-          <TableCell className="font-medium">{calonStaff.generation}</TableCell>
+          <TableCell className="font-medium">{calonStaff.email}</TableCell>
         </TableRow>
         <TableRow className="font-bold text-slate-100 ">
           <TableCell colSpan={10} className=" w-[200px] lg:w-[400px] font-bold">
