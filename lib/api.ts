@@ -28,7 +28,7 @@ export async function fetchCalonStaff(query?: string) {
     return getCalonStaffKominfo();
   }
   if (query === "pmb") {
-    return getCalonStaffKominfo();
+    return getCalonStaffPMB();
   }
   if (query === "psdm") {
     return getCalonStaffPSDM();
@@ -184,7 +184,7 @@ async function getCalonStaffKominfo() {
   }
 }
 
-async function getCalonStaffPMB() {
+export async function getCalonStaffPMB() {
   try {
     const calonStaffCollection = collection(db, "calonStaff");
     const calonStaffAkademikQuery = query(
