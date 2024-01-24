@@ -4,6 +4,7 @@ import {
   getDoc,
   getDocs,
   or,
+  orderBy,
   query,
   where,
 } from "firebase/firestore";
@@ -38,9 +39,10 @@ export async function fetchCalonStaff(query?: string) {
 
 export async function getAllCalonStaff() {
   try {
-    const calonStaffCollection = collection(db, "calonStaff");
-    const calonStaffDoc = await getDocs(calonStaffCollection);
-    const calonStaffRes = calonStaffDoc.docs.map((doc) => ({
+    const calonStaffRef = collection(db, "calonStaff");
+    const calonStaffQuery = query(calonStaffRef, orderBy("name", "asc"));
+    const calonStaffDocs = await getDocs(calonStaffQuery);
+    const calonStaffRes = calonStaffDocs.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
     }));
@@ -63,13 +65,14 @@ export async function getCalonStaffById(id: string) {
 
 async function getCalonStaffAkademik() {
   try {
-    const calonStaffCollection = collection(db, "calonStaff");
+    const calonStaffRef = collection(db, "calonStaff");
     const calonStaffAkademikQuery = query(
-      calonStaffCollection,
+      calonStaffRef,
       or(
         where("divisions", "array-contains", "Akademik - PTI"),
         where("divisions", "array-contains", "Akademik - PIP")
-      )
+      ),
+      orderBy("name", "asc")
     );
 
     const querySnapshot = await getDocs(calonStaffAkademikQuery);
@@ -88,7 +91,8 @@ async function getCalonStaffAdministrasi() {
     const calonStaffCollection = collection(db, "calonStaff");
     const calonStaffAkademikQuery = query(
       calonStaffCollection,
-      where("divisions", "array-contains", "Administrasi")
+      where("divisions", "array-contains", "Administrasi"),
+      orderBy("name", "asc")
     );
 
     const querySnapshot = await getDocs(calonStaffAkademikQuery);
@@ -107,7 +111,8 @@ async function getCalonStaffPSDM() {
     const calonStaffCollection = collection(db, "calonStaff");
     const calonStaffAkademikQuery = query(
       calonStaffCollection,
-      where("divisions", "array-contains", "PSDM")
+      where("divisions", "array-contains", "PSDM"),
+      orderBy("name", "asc")
     );
 
     const querySnapshot = await getDocs(calonStaffAkademikQuery);
@@ -129,7 +134,8 @@ async function getCalonStaffKastrad() {
       or(
         where("divisions", "array-contains", "Kastrad - ADKAM"),
         where("divisions", "array-contains", "Kastrad - POLPRO")
-      )
+      ),
+      orderBy("name", "asc")
     );
 
     const querySnapshot = await getDocs(calonStaffAkademikQuery);
@@ -148,7 +154,8 @@ async function getCalonStaffKWU() {
     const calonStaffCollection = collection(db, "calonStaff");
     const calonStaffAkademikQuery = query(
       calonStaffCollection,
-      where("divisions", "array-contains", "KWU")
+      where("divisions", "array-contains", "KWU"),
+      orderBy("name", "asc")
     );
 
     const querySnapshot = await getDocs(calonStaffAkademikQuery);
@@ -170,7 +177,8 @@ async function getCalonStaffKominfo() {
       or(
         where("divisions", "array-contains", "KOMINFO - HUMAS"),
         where("divisions", "array-contains", "KOMINFO - MULMED")
-      )
+      ),
+      orderBy("name", "asc")
     );
 
     const querySnapshot = await getDocs(calonStaffAkademikQuery);
@@ -192,7 +200,8 @@ export async function getCalonStaffPMB() {
       or(
         where("divisions", "array-contains", "PMB - Olahraga"),
         where("divisions", "array-contains", "PMB - Seni")
-      )
+      ),
+      orderBy("name", "asc")
     );
 
     const querySnapshot = await getDocs(calonStaffAkademikQuery);
