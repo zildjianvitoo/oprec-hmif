@@ -19,10 +19,10 @@ export default function RootDashboard({
             className="flex-row items-center hidden w-auto h-auto md:flex"
           >
             <Image
-              src="/NavLogo.png"
+              src="/logo.png"
               alt="logo"
-              width={70}
-              height={70}
+              width={50}
+              height={50}
               className="cursor-pointer hover:animate-slowspin"
             />
 
