@@ -34,8 +34,8 @@ import { db, storage } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { ref, uploadBytes } from "firebase/storage";
-import NoSSR from "../atoms/NoSSR";
 import { toast } from "../ui/use-toast";
+import { useEffect } from "react";
 
 const MAX_FILE_SIZE = 4000000;
 const ACCEPTED_IMAGE_TYPES = [
@@ -113,6 +113,15 @@ export default function PendaftaranForm() {
       kpm: null,
     },
   });
+
+  useEffect(() => {
+    toast({
+      title: "Pendafataran telah ditutup",
+      description:
+        "Mohon maaf pendaftaran OPREC HMIF UNSRI 2024 telah ditutup,terimakasih telah mendaftar,see u next year!!",
+    });
+    router.push("/");
+  }, []);
 
   const router = useRouter();
 

@@ -10,28 +10,28 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebase";
 
-export async function fetchCalonStaff(query?: string) {
-  if (query === "akademik") {
+export async function fetchCalonStaff(dinasName?: string) {
+  if (dinasName === "akademik") {
     return getCalonStaffAkademik();
   }
-  if (query === "administrasi") {
+  if (dinasName === "administrasi") {
     return getCalonStaffAdministrasi();
   }
-  if (query === "kastrad") {
+  if (dinasName === "kastrad") {
     return getCalonStaffKastrad();
   }
 
-  if (query === "kwu") {
+  if (dinasName === "kwu") {
     return getCalonStaffKWU();
   }
 
-  if (query === "kominfo") {
+  if (dinasName === "kominfo") {
     return getCalonStaffKominfo();
   }
-  if (query === "pmb") {
+  if (dinasName === "pmb") {
     return getCalonStaffPMB();
   }
-  if (query === "psdm") {
+  if (dinasName === "psdm") {
     return getCalonStaffPSDM();
   }
   return getAllCalonStaff();
