@@ -3,15 +3,17 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB_jGLLcw6TL2T8ughsDsLdn28g3Q6C4SE",
-  authDomain: "oprec-hmif24.firebaseapp.com",
-  projectId: "oprec-hmif24",
-  storageBucket: "oprec-hmif24.appspot.com",
-  messagingSenderId: "644163844787",
-  appId: "1:644163844787:web:6ead277e08bce818804ec6",
-  measurementId: "G-3JTW9B4N80",
+  apiKey: "AIzaSyBE6ev2Aoel7qLB-kaLN4Rl1TxjBI8-sk4",
+  authDomain: "oprec-backup24.firebaseapp.com",
+  projectId: "oprec-backup24",
+  storageBucket: "oprec-backup24.appspot.com",
+  messagingSenderId: "566216641011",
+  appId: "1:566216641011:web:d6f1b61459c7736d08aa86"
 };
+
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
